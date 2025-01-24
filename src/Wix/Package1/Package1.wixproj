@@ -1,4 +1,19 @@
 ﻿<Project Sdk="WixToolset.Sdk/5.0.2">
+  <PropertyGroup>
+    <Platform>x64</Platform>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <HarvestDirectory Include="D:\Dev\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\publish">
+      <ComponentGroupName>HarvestedComponents</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+    </HarvestDirectory>
+
+    <BindPath Include="D:\Dev\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\publish" />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
   </ItemGroup>
