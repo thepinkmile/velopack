@@ -1,0 +1,23 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <!-- May wish to pull Name, Manufacturer and Version from the packaged installer -->
+  <Package Name="Package1" Manufacturer="TODO Manufacturer" Version="1.0.0.0" UpgradeCode="b67bdcad-bcb4-40be-80b0-4dc67ba42ff9" Scope="perUser">
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+    <MediaTemplate EmbedCab="true"/>
+
+    <Feature Id="Main">
+      <ComponentGroupRef Id="VelopakApp" />
+    </Feature>
+
+    <ComponentGroup Id="VelopakApp">
+      <ComponentGroupRef Id="HarvestedComponents" />
+      <Component Id="AppInstallFolder_remove" Directory="AppInstallFolder">
+        <RegistryValue Id="AppInstallFolder_remove_reg" Root="HKCU" Key="AppInstallFolderDirectory" Value="[AppInstallFolder]" KeyPath="true"  />
+        <RemoveFolder Id="AppInstallFolder_remove_dir" Property="AppInstallFolder" On="uninstall" />
+      </Component>
+      <Component Id="AppInstallManufactrerFolder_remove" Directory="AppInstallManufactrerFolder">
+        <RegistryValue Id="AppInstallManufactrerFolder_remove_reg" Root="HKCU" Key="AppInstallManufactrerFolderDirectory" Value="[AppInstallManufactrerFolder]" KeyPath="true"  />
+        <RemoveFolder Id="AppInstallManufactrerFolder_remove_dir" Property="AppInstallManufactrerFolder" On="uninstall" />
+      </Component>
+    </ComponentGroup>
+  </Package>
+</Wix>

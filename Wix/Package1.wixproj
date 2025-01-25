@@ -1,0 +1,31 @@
+﻿<Project Sdk="WixToolset.Sdk/5.0.2">
+  <PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <HarvestDirectoryAutogenerateGuids>false</HarvestDirectoryAutogenerateGuids>
+    <HarvestDirectorySuppressUniqueIds>false</HarvestDirectorySuppressUniqueIds>
+    <HarvestDirectoryGenerateGuidsNow>true</HarvestDirectoryGenerateGuidsNow>
+    
+    <!-- Ignore warnings about perUser scope as that is what we are using -->
+    <HarvestDirectorySuppressSpecificWarnings>5150;5151</HarvestDirectorySuppressSpecificWarnings>
+    <SuppressIces>ICE91;ICE57</SuppressIces>
+
+    <!-- Simplify the ability to inject path to be harvested on command line -->
+    <PackageHarvestPath>..\..\package-to-install</PackageHarvestPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <HarvestDirectory Include="$(PackageHarvestPath)">
+      <ComponentGroupName>HarvestedComponents</ComponentGroupName>
+      <DirectoryRefId>AppInstallFolder</DirectoryRefId>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+      <Transforms>HarvestTransform.xslt;HarvestTransformFixup.xslt</Transforms>
+    </HarvestDirectory>
+    <BindPath Include="$(PackageHarvestPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HarvestTransform.xslt" />
+    <None Include="HarvestTransformFixup.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
+  </ItemGroup>
+</Project>

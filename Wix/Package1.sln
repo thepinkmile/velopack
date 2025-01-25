@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "Package1", "Package1.wixproj", "{BC7876FE-6024-42EA-BA08-59A5BC586A2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{9451758A-C2C1-444B-B3B1-A92ADE9DA6B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC7876FE-6024-42EA-BA08-59A5BC586A2F}.Debug|x64.ActiveCfg = Debug|x64
+		{BC7876FE-6024-42EA-BA08-59A5BC586A2F}.Debug|x64.Build.0 = Debug|x64
+		{BC7876FE-6024-42EA-BA08-59A5BC586A2F}.Release|x64.ActiveCfg = Release|x64
+		{BC7876FE-6024-42EA-BA08-59A5BC586A2F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

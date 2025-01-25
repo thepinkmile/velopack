@@ -1,9 +1,8 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
     <StandardDirectory Id="LocalAppDataFolder">
-      <Directory Id="AppInstallFolder" Name="!(bind.Property.ProductName)">
-        <Directory Id="INSTALLFOLDER" Name="!(bind.Property.Manufacturer)">
-        </Directory>
+      <Directory Id="AppInstallManufactrerFolder" Name="!(bind.Property,Manufacturer)">
+        <Directory Id="AppInstallFolder" Name="!(bind.Property.ProductName)" />
       </Directory>
     </StandardDirectory>
   </Fragment>
